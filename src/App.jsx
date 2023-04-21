@@ -1,28 +1,28 @@
-import {createElement} from 'react';
+import React from 'react';
 import {createRoot} from 'react-dom';
 
 const Pet = props => {
-    return createElement('div', {}, [
-        createElement('h1', {}, props.name),
-        createElement('h2', {}, props.animal),
-        createElement('h2', {}, props.breed),
+    return React.createElement('div', {}, [
+        React.createElement('h1', {}, props.name),
+        React.createElement('h2', {}, props.animal),
+        React.createElement('h2', {}, props.breed),
     ]);
 };
 
 const App = () => {
-    return createElement('div', {}, [
-        createElement('h1', {}, 'Adopt Me!'),
-        createElement(Pet, {
+    return React.createElement('div', {}, [
+        React.createElement('h1', {}, 'Adopt Me!'),
+        React.createElement(Pet, {
             animal: 'Dog',
             name: 'Luna',
             breed: 'Havanese',
         }),
-        createElement(Pet, {
+        React.createElement(Pet, {
             animal: 'Bird',
             name: 'Pepper',
             breed: 'Cockatiel',
         }),
-        createElement(Pet, {
+        React.createElement(Pet, {
             animal: 'Cat',
             name: 'Doink',
             breed: 'Mixed',
@@ -32,4 +32,4 @@ const App = () => {
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render(createElement(App));
+root.render(React.createElement(App));
