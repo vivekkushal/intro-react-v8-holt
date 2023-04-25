@@ -1,16 +1,19 @@
 import { createRoot } from 'react-dom/client';
-// import Pet from './Pet.jsx';
+import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchParams from './SearchParams.jsx';
+import Details from './Details.jsx';
 
 const App = () => {
   return (
-    <div>
-      <h1>Adopt Me!</h1>
-      {/* <Pet name="Luna" animal="Dog" breed="Havanese" />
-            <Pet name="Pepper" animal="Bird" breed="Cockatiel" />
-            <Pet name="Doink" animal="Cat" breed="Mixed" /> */}
-      <SearchParams />
-    </div>
+    <BrowserRouter>
+      <header>
+        <Link to="/">Adopt Me!</Link>
+      </header>
+      <Routes>
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/" element={<SearchParams />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
